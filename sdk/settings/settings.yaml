@@ -1,2 +1,6 @@
 defaultLocale: en
+localizedSettings:
+  displayName: The Wood Smith
+  pronunciation: The Wood Smith
+  voice: female_1
 projectId: the-wood-smith-2
