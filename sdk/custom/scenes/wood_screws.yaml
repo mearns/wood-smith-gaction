@@ -1,0 +1,147 @@
+conditionalEvents:
+- condition: scene.slots.status == "FINAL"
+  handler:
+    webhookHandler: woodScrewFunc
+slots:
+
+- commitBehavior:
+    writeSessionParam: woodType
+  name: woodType
+  type:
+    name: WoodType
+
+- name: size
+  promptSettings:
+    initialPrompt:
+      staticPrompt:
+        candidates:
+        - promptResponse:
+            firstSimple:
+              variants:
+              - speech: What size?
+            suggestions:
+            - title: number 2
+            - title: number 3
+            - title: 15/64
+    noInputPrompt1:
+      staticPrompt:
+        candidates:
+        - promptResponse:
+            firstSimple:
+              variants:
+              - speech: what size wood screw do you want to know about?
+              - speech: what size wood screw are you using?
+            suggestions:
+            - title: number 2
+            - title: number 3
+            - title: 15/64
+    noInputPrompt2:
+      staticPrompt:
+        candidates:
+        - promptResponse:
+            firstSimple:
+              variants:
+              - speech: What size wood screw? You can say something like "number 2"
+                  or "fifteen sixty-fourths".
+            suggestions:
+            - title: number 2
+            - title: number 3
+            - title: 15/64
+    noMatchPrompt1:
+      staticPrompt:
+        candidates:
+        - promptResponse:
+            firstSimple:
+              variants:
+              - speech: Sorry, I didn't understand that. What size?
+              - speech: Sorry, I didn't get that. What size?
+            suggestions:
+            - title: number 2
+            - title: number 3
+            - title: 15/64
+    noMatchPrompt2:
+      staticPrompt:
+        candidates:
+        - promptResponse:
+            firstSimple:
+              variants:
+              - speech: Sorry, I didn't understand that. Try something like "number
+                  2" or "fifteen sixty-fourths".
+            suggestions:
+            - title: number 2
+            - title: number 3
+            - title: 15/64
+  required: true
+  type:
+    name: wood_screw_size
+
+- name: parameter
+  promptSettings:
+    initialPrompt:
+      staticPrompt:
+        candidates:
+        - promptResponse:
+            firstSimple:
+              variants:
+              - speech: What do you want to know about it?
+            suggestions:
+            - title: head-size
+            - title: counter-sink
+            - title: pilot-hole
+            - title: shank-hole
+    noInputPrompt1:
+      staticPrompt:
+        candidates:
+        - promptResponse:
+            firstSimple:
+              variants:
+              - speech: What would you like to know about $session.params.size wood screws?
+            suggestions:
+            - title: head-size
+            - title: counter-sink
+            - title: pilot-hole
+            - title: shank-hole
+    noInputPrompt2:
+      staticPrompt:
+        candidates:
+        - promptResponse:
+            firstSimple:
+              variants:
+              - speech: >-
+                  What would you like to know about $session.params.size wood screws? You can say
+                  something like "head-size" or "pilot-hole".
+            suggestions:
+            - title: head-size
+            - title: counter-sink
+            - title: pilot-hole
+            - title: shank-hole
+    noMatchPrompt1:
+      staticPrompt:
+        candidates:
+        - promptResponse:
+            firstSimple:
+              variants:
+              - speech: Sorry, I didn't understand that. What do you want to know about?
+              - speech: Sorry, I didn't get that. What size?
+            suggestions:
+            - title: head-size
+            - title: counter-sink
+            - title: pilot-hole
+            - title: shank-hole
+    noMatchPrompt2:
+      staticPrompt:
+        candidates:
+        - promptResponse:
+            firstSimple:
+              variants:
+              - speech: >-
+                  What would you like to know about $session.params.size wood screws? You can say
+                  something like "head-size" or "pilot-hole".
+            suggestions:
+            - title: head-size
+            - title: counter-sink
+            - title: pilot-hole
+            - title: shank-hole
+  required: true
+  type:
+    name: wood_screw_parameter

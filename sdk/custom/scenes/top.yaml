@@ -1,0 +1,5 @@
+intentEvents:
+- intent: wood_screws
+  transitionToScene: wood_screws
+onEnter:
+  webhookHandler: woodScrewSizeTypeOverrides

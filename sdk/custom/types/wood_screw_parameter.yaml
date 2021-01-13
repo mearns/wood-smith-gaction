@@ -1,0 +1,37 @@
+synonym:
+  entities:
+    countersink size:
+      synonyms:
+      - countersink
+      - counter sink
+      - counter-sink
+      - countersink size
+      - counter sink size
+      - counter-sink size
+    head-bore size:
+      synonyms:
+      - head-bore
+      - headbore
+      - head
+      - bore
+      - head-bore size
+      - headbore size
+      - head size
+      - bore size
+    pilot-hole size:
+      synonyms:
+      - pilot-hole
+      - pilot hole
+      - pilot
+      - pilot-hole size
+      - pilot hole size
+      - pilot size
+    shank-hole size:
+      synonyms:
+      - shank-hole
+      - shank hole
+      - shank
+      - shank-hole size
+      - shank hole size
+      - shank size
+  matchType: EXACT_MATCH

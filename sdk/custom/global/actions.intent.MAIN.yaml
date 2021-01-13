@@ -4,5 +4,16 @@ handler:
     - promptResponse:
         firstSimple:
           variants:
-          - speech: Start building your action by defining main invocation.
-transitionToScene: actions.scene.END_CONVERSATION
+          - speech: Great, let's talk wood working!
+          - speech: Great, let's talk about wood working!
+          - speech: Great, let's talk wood!
+          - speech: Great, let's talk about wood!
+          - speech: Alright, let's talk wood working!
+          - speech: Alright, let's talk about wood working!
+          - speech: Alright, let's talk wood!
+          - speech: Alright, let's talk about wood!
+        lastSimple:
+          variants:
+          - speech: What can I help with?
+          - speech: What do you need?
+transitionToScene: top

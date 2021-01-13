@@ -1,0 +1,5 @@
+handlers:
+- name: woodScrewFunc
+- name: woodScrewSizeTypeOverrides
+inlineCloudFunction:
+  executeFunction: ActionsOnGoogleFulfillment

@@ -1,0 +1,6 @@
+synonym:
+  entities:
+    wood-screw-size-placeholder:
+      synonyms:
+      - wood-screw-size-placeholder
+  matchType: EXACT_MATCH

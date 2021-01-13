@@ -1,0 +1,13 @@
+synonym:
+  entities:
+    hardwood:
+      synonyms:
+      - hardwood
+      - hard wood
+      - hard
+    softwood:
+      synonyms:
+      - softwood
+      - soft wood
+      - soft
+  matchType: EXACT_MATCH
