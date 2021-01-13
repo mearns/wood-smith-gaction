@@ -1,5 +1,6 @@
 handlers:
-- name: woodScrewFunc
+- name: woodScrewHoleFunc
 - name: woodScrewSizeTypeOverrides
-inlineCloudFunction:
-  executeFunction: ActionsOnGoogleFulfillment
+httpsEndpoint:
+  baseUrl: https://us-central1-the-wood-smith-2.cloudfunctions.net/ActionsOnGoogleFulfillment
+  endpointApiVersion: 2

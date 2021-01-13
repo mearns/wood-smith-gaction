@@ -1,0 +1,35 @@
+parameters:
+- name: woodType
+  type:
+    name: wood_type
+- name: holeType
+  type:
+    name: wood_screw_hole_type
+- name: size
+  type:
+    name: wood_screw_size
+- name: number1
+  type:
+    name: actions.type.Number
+trainingPhrases:
+- Help me drill holes for wood screw
+- How big should I drill a ($holeType 'pilot hole' auto=true) in ($woodType 'hardwood'
+  auto=true)?
+- How big of a ($holeType 'pilot hole' auto=true) do I need for a ($size 'number 2'
+  auto=true) screw?
+- How big of a hole do I need for a ($size 'number 2' auto=true) screw?
+- I'm drilling a ($holeType 'pilot hole' auto=true) for a ($size 'number 2' auto=true)
+  screw
+- I'm drilling holes in ($woodType 'hardwood' auto=true) for a ($size 'number 2' auto=true)
+  screw
+- I'm drilling holes for wood screws
+- what size hole do I need for a ($size 'number 2' auto=false) screw?
+- Help me drill holes for a ($size 'number 2' auto=false) screw
+- Help me drill holes in ($woodType 'hardwood' auto=true)
+- I want help drilling a ($holeType 'pilot hole' auto=true) for wood screws
+- I want help drilling holes for a wood screw
+- I want help drilling for a wood screw
+- what size ($holeType 'pilot hole' auto=true) do I need for a ($size 'number 2' auto=false)
+  screw?
+- how should I drill a ($holeType 'pilot hole' auto=false)  in ($woodType 'hardwood'
+  auto=false) for a ($size 'wood-screw-size-placeholder' auto=false) wood screw?

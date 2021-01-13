@@ -1,6 +1,36 @@
 synonym:
   entities:
-    wood-screw-size-placeholder:
+    number 2:
       synonyms:
-      - wood-screw-size-placeholder
+      - number 2
+    number 3:
+      synonyms:
+      - number 3
+    number 4:
+      synonyms:
+      - number 4
+    number 5:
+      synonyms:
+      - number 5
+    number 6:
+      synonyms:
+      - number 6
+    number 7:
+      synonyms:
+      - number 7
+    number 8:
+      synonyms:
+      - number 8
+    number 9:
+      synonyms:
+      - number 9
+    number 10:
+      synonyms:
+      - number 10
+    number 12:
+      synonyms:
+      - number 12
+    number 14:
+      synonyms:
+      - number 14
   matchType: EXACT_MATCH

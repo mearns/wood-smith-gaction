@@ -1,0 +1,12 @@
+conditionalEvents:
+- condition: "true"
+  transitionToScene: top
+onEnter:
+  staticPrompt:
+    candidates:
+    - promptResponse:
+        firstSimple:
+          variants:
+          - speech: What else can I tell you about wood working?
+          - speech: Is there any other wood working I can help with?
+          - speech: Would you like any other help with wood working?

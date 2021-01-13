@@ -1,0 +1,24 @@
+synonym:
+  entities:
+    countersink:
+      synonyms:
+      - countersink
+      - counter sink
+      - counter-sink
+    head-bore:
+      synonyms:
+      - head-bore
+      - headbore
+      - head
+      - bore
+    pilot-hole:
+      synonyms:
+      - pilot-hole
+      - pilot hole
+      - pilot
+    shank-hole:
+      synonyms:
+      - shank-hole
+      - shank hole
+      - shank
+  matchType: EXACT_MATCH

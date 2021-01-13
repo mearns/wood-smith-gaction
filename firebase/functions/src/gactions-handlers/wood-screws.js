@@ -1,12 +1,12 @@
 const functions = require("firebase-functions");
 const { defineWoodScrewSizeEntityType } = require("../lib/wood-screws");
 
-module.exports.woodScrewFunc = conv => {
+module.exports.woodScrewHoleFunc = conv => {
     functions.logger.log(
         "woodScrewFunc triggered on webhook",
-        conv.scene.slots
+        conv.intent.params
     );
-    conv.add("woodScrewFunc triggered on webhook");
+    conv.add("I'll have to get back to you.");
 };
 
 module.exports.woodScrewSizeTypeOverrides = conv => {
@@ -18,4 +18,8 @@ module.exports.woodScrewSizeTypeOverrides = conv => {
             ...defineWoodScrewSizeEntityType()
         }
     ];
+    functions.logger.log(
+        "New Wood Screw Size Type:",
+        conv.session.typeOverrides
+    );
 };
