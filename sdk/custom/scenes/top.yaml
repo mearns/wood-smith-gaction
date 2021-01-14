@@ -1,5 +1,3 @@
 intentEvents:
 - intent: wood_screw_drilling
   transitionToScene: wood_screw_drilling
-onEnter:
-  webhookHandler: woodScrewSizeTypeOverrides
