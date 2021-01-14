@@ -32,4 +32,4 @@ trainingPhrases:
 - what size ($holeType 'pilot hole' auto=true) do I need for a ($size 'number 2' auto=false)
   screw?
 - how should I drill a ($holeType 'pilot hole' auto=false)  in ($woodType 'hardwood'
-  auto=false) for a ($size 'wood-screw-size-placeholder' auto=false) wood screw?
+  auto=false) for a ($size 'number 2' auto=false) wood screw?
