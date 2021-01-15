@@ -1,8 +1,3 @@
-onEnter:
-  staticPrompt:
-    candidates:
-    - suggestions:
-      - title: woodscrews
 intentEvents:
 - intent: wood_screw_drilling
   transitionToScene: wood_screw_drilling
@@ -10,3 +5,9 @@ intentEvents:
   transitionToScene: bottom
 - intent: nothing-else
   transitionToScene: actions.scene.END_CONVERSATION
+onEnter:
+  staticPrompt:
+    candidates:
+    - promptResponse:
+        suggestions:
+        - title: wood screws
