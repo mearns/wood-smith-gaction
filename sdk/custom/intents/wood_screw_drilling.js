@@ -1,6 +1,42 @@
-const paramWoodType = "($woodType 'hardwood' auto=false)";
-const paramSize = "($size 'number 2' auto=false)";
-const paramHoleType = "($holeType 'pilot hole' auto=false)";
+const seedrandom = require("seedrandom");
+const rng = seedrandom("wood-screws");
+
+function param(name, ...values) {
+    return () => {
+        const selectedValue = values[Math.floor(values.length * rng())];
+        return `($${name} '${selectedValue}' auto=false)`;
+    };
+}
+
+const paramWoodType = param(
+    "woodType",
+    "hardwood",
+    "softwood",
+    "hard wood",
+    "soft wood"
+);
+const paramSize = param(
+    "size",
+    "number 2",
+    "number 3",
+    "num 3",
+    "no 4",
+    "#4",
+    "5",
+    "6",
+    "no 5"
+);
+const paramHoleType = param(
+    "holeType",
+    "pilot",
+    "pilot hole",
+    "shank-hole",
+    "shank",
+    "countersink",
+    "counter sink",
+    "head-bore",
+    "head"
+);
 
 const situationDescriptions = [
     ...multi`a ${paramHoleType} in ${paramWoodType} for a ${paramSize}`,
@@ -74,11 +110,11 @@ function opt(x) {
 }
 
 function crossProduct(first, ...others) {
-    const firstOptions = Array.isArray(first) ? first : [first];
-    if (others.length === 0) {
-        return firstOptions;
-    }
-    const suffixes = crossProduct(...others);
+    const resolvedFirst = typeof first === "function" ? first() : first;
+    const firstOptions = Array.isArray(resolvedFirst)
+        ? resolvedFirst
+        : [resolvedFirst];
+    const suffixes = others.length === 0 ? [""] : crossProduct(...others);
     return firstOptions
         .map(f => suffixes.map(s => `${f}${s}`))
         .reduce((all, ari) => {
