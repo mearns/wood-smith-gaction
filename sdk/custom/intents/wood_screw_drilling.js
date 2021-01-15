@@ -57,8 +57,8 @@ const situationDescriptions = [
 ];
 
 const trainers = [
-    ...multi`I want to drill ${situationDescriptions}`,
     ...multi`Help me drill ${situationDescriptions}`,
+    ...multi`I want to drill ${situationDescriptions}`,
     ...multi`I need ${situationDescriptions}`,
     ...multi`What bit should I use for ${situationDescriptions}?`,
     ...multi`What size do I need for ${situationDescriptions}?`

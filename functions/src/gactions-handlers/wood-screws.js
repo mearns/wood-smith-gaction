@@ -76,17 +76,33 @@ module.exports.woodScrewHoleFunc = conv => {
                     break;
 
                 case undefined:
-                    conv.add(
-                        simple`For a number ${screwSize} screw, drill a ${fractions.fractionPrompt(
-                            ...selectedScrew.pilotHole.hardwood,
-                            "inch",
-                            "inches"
-                        )} pilot-hole in hardwood, and a ${fractions.fractionPrompt(
-                            ...selectedScrew.pilotHole.softwood,
-                            "inch",
-                            "inches"
-                        )} pilot-hole in softwood.`
-                    );
+                    {
+                        const { hardwood, softwood } = selectedScrew.pilotHole;
+                        if (
+                            hardwood[0] === softwood[0] &&
+                            hardwood[1] === softwood[1]
+                        ) {
+                            conv.add(
+                                simple`For a number ${screwSize} screw, drill a ${fractions.fractionPrompt(
+                                    ...hardwood,
+                                    "inch",
+                                    "inches"
+                                )} pilot-hole for either hardwood or softwood.`
+                            );
+                        } else {
+                            conv.add(
+                                simple`For a number ${screwSize} screw, drill a ${fractions.fractionPrompt(
+                                    ...selectedScrew.pilotHole.hardwood,
+                                    "inch",
+                                    "inches"
+                                )} pilot-hole in hardwood, and a ${fractions.fractionPrompt(
+                                    ...selectedScrew.pilotHole.softwood,
+                                    "inch",
+                                    "inches"
+                                )} pilot-hole in softwood.`
+                            );
+                        }
+                    }
                     break;
 
                 default:

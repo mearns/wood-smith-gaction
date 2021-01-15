@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "generate": "node dev-scripts/generate-yaml sdk build/sdk",
+    "generate": "rimraf build/sdk && node dev-scripts/generate-yaml sdk build/sdk",
     "publish:gactions": "cd build/sdk && gactions push",
     "deploy:firebase": "firebase deploy",
     "firebase-emulate": "firebase emulate"
@@ -23,6 +23,7 @@
     "js-yaml": "^4.0.0",
     "node": "^12.20.0",
     "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
     "seedrandom": "^3.0.5"
   },
   "dependencies": {
