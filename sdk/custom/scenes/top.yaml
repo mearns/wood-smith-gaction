@@ -1,9 +1,9 @@
 intentEvents:
 - intent: wood_screw_drilling
   transitionToScene: wood_screw_drilling
-- intent: start-something-else
+- intent: start_something_else
   transitionToScene: bottom
-- intent: nothing-else
+- intent: nothing_else
   transitionToScene: actions.scene.END_CONVERSATION
 onEnter:
   staticPrompt:

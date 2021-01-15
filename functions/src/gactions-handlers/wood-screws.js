@@ -26,7 +26,7 @@ module.exports.woodScrewHoleFunc = conv => {
         case "countersink":
             conv.add(
                 simple`For a number ${screwSize} screw, use a ${fractions.fractionPrompt(
-                    ...selectedScrew.headsSize,
+                    ...selectedScrew.headSize,
                     "inch",
                     "inches"
                 )} countersink.`
@@ -36,7 +36,7 @@ module.exports.woodScrewHoleFunc = conv => {
         case "head-bore":
             conv.add(
                 simple`For a number ${screwSize} screw, bore a ${fractions.fractionPrompt(
-                    ...selectedScrew.headsSize,
+                    ...selectedScrew.headSize,
                     "inch",
                     "inches"
                 )} hole for the head.`
