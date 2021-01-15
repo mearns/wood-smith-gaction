@@ -50,6 +50,7 @@ async function generateDir(srcPath, destPath) {
                     await fs.promises.copyFile(fullPath, fullDestPath);
                     console.log(`Copied file to ${fullDestPath}`);
                 }
+                await fs.promises.chmod(fullDestPath, 0o444);
             } else {
                 throw new Error(
                     "Don't know how to handle a directory entry that is neither a directory nor a file: " +
