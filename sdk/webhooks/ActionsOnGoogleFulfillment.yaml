@@ -1,5 +1,5 @@
 handlers:
-- name: woodScrewHoleFunc
+  - name: woodScrewHoleFunc
 httpsEndpoint:
-  baseUrl: https://us-central1-the-wood-smith-2.cloudfunctions.net/ActionsOnGoogleFulfillment
+  baseUrl: https://us-central1-the-woodshop-helper.cloudfunctions.net/ActionsOnGoogleFulfillment
   endpointApiVersion: 2

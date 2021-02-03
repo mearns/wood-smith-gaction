@@ -3,15 +3,20 @@ defaultLocale: en
 localizedSettings:
   developerEmail: mearns.b@gmail.com
   developerName: Brian Mearns
-  displayName: The Woodwright
-  fullDescription: Get some information to assist with wood working.
+
+  ### Begin Action Name Section
+  displayName: The Woodshop Helper
+  pronunciation: The Woodshop Helper
   privacyPolicyUrl: https://docs.google.com/document/d/1-gfDJljm77rZ2bbDEVuYCIC0DqpsHahPqzNIhtKYdeE/edit?usp=sharing
-  pronunciation: The Woodwright
+  ### End Action Name Section
+
+  fullDescription: Get some information to assist with wood working.
   sampleInvocations:
-  - Talk to The Woodwright
+    - Talk to The Woodshop Helper
   shortDescription: Help with wood working
   smallLogoImage: https://lh3.googleusercontent.com/zssgO9TsaSVL2YG7Dc2EIFCt58T2KCiXFKerMkQOiNy1w8VCIiIzlrPNCAFRbogNvN-h2rrJ5-1e
   voice: female_1
-projectId: the-woodwright
-testingInstructions: You can ask "How should I drill a pilot hole in hardwood for
+projectId: the-woodshop-helper
+testingInstructions:
+  You can ask "How should I drill a pilot hole in hardwood for
   a number 2 wood screw?" The app should tell you to drill a 1/16 inch pilot-hole.
