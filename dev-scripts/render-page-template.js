@@ -6,7 +6,7 @@ const packageData = require("../package.json");
 
 function stripHeader(contents) {
     const lines = contents.split(/\r?\n/);
-    const idx = lines.find(line => line.trim() === "---") + 1;
+    const idx = lines.findIndex(line => line.trim() === "---") + 1;
     return lines.slice(idx).join("\n");
 }
 

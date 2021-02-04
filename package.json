@@ -3,10 +3,10 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
+    "clean": "rimraf build/ reports/ public/logo.png public/reports/",
     "serve": "firebase emulators:start --only functions",
     "shell": "firebase functions:shell",
     "logs": "firebase functions:log",
-    "clean": "rimraf build/",
     "pretty": "pretty-quick --staged",
     "pretty-all": "prettier --write src/**/*.js test/**/*.js dev-scripts/**/*.js gactions/**/*.js gactions/**/*.json gactions/**/*.yaml gactions/**/*.yml ./*.js ./*.json ./*.yaml ./*.yml",
     "check": "eslint --max-warnings 0 --no-error-on-unmatched-pattern --format codeframe src/ test/ gactions/ dev-scripts/ \"./*.js\"",
@@ -14,16 +14,15 @@
     "actions-test": "jest --testPathPattern=test\\/actions\\/",
     "test": "npm run unit-test",
     "verify": "npm run check && npm run test",
-    "public": "npm-run-all \"public:*\"",
     "build:gactions": "rimraf build/gactions && node dev-scripts/generate-yaml gactions build/gactions",
     "publish:gactions": "cd build/gactions && gactions push",
     "deploy:firebase": "firebase deploy",
-    "pages": "npm-run-all \"pages:*\"",
+    "public": "npm-run-all \"public:*\"",
     "public:logo": "copyfiles logo.png public/",
     "public:reports": "npm-run-all \"public:reports:*\"",
     "public:reports:copy": "copyfiles \"reports/**/*\" public/",
     "public:reports:copy-logo": "copyfiles logo.png public/reports/",
-    "public:reports:index": "mkdirp public && node ./dev-scripts/render.js dev-scripts/resources/reports/index.hbs > public/reports/index.html"
+    "public:reports:index": "mkdirp public && node ./dev-scripts/render-page-template.js dev-scripts/resources/reports/index.hbs > public/reports/index.html"
   },
   "repository": {
     "type": "git",
