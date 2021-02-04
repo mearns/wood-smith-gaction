@@ -28,8 +28,8 @@ The Backend stuff can be viewed in [Firebase](https://console.firebase.google.co
 ### Deploy Google Actions
 
 ```console
-$ npm run generate
-$ npm run publish:gactions
+$ npm run build:gactions
+$ npm run publish-gactions
 ```
 
 You need to have the gactions-cli installed.
@@ -45,7 +45,7 @@ Firebase console is here: https://console.firebase.google.com/u/0/
 ### Run Firebase Locally
 
 ```console
-$ npm run firebase-emulate
+$ npm run serve
 ```
 
 ## How To

@@ -14,18 +14,28 @@
     "actions-test": "jest --testPathPattern=test\\/actions\\/",
     "test": "npm run unit-test",
     "verify": "npm run check && npm run test",
-    "build": "npm-run-all \"build:*\"",
     "deploy": "npm-run-all \"deploy:*\"",
-    "build:gactions": "rimraf build/gactions && node dev-scripts/generate-yaml gactions build/gactions",
-    "publish:gactions": "cd build/gactions && gactions push",
+    "publish-gactions": "cd build/gactions && gactions push",
     "deploy:firebase": "firebase deploy",
+    "deploy:firebase:hosting": "firebase deploy --only hosting",
+    "deploy:firebase:functions": "firebase deploy --only functions",
+    "build": "npm-run-all \"build:*\"",
+    "build:gactions": "rimraf build/gactions && node dev-scripts/generate-yaml gactions build/gactions",
     "build:public": "npm-run-all \"build:public:*\"",
     "build:public:logo": "copyfiles logo.png public/",
+    "build:public:favicon": "cp logo.png public/favicon.ico",
     "build:public:reports": "npm-run-all \"build:public:reports:*\"",
     "build:public:reports:copy": "copyfiles \"reports/**/*\" public/",
     "build:public:reports:copy-logo": "copyfiles logo.png public/reports/",
     "build:public:reports:index": "mkdirp public && node ./dev-scripts/render-page-template.js dev-scripts/resources/reports/index.hbs > public/reports/index.html"
   },
+  "main": "src/index.js",
+  "engines": {
+    "node": "14"
+  },
+  "files": [
+    "src/"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mearns/wood-smith-gaction.git"

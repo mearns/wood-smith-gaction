@@ -1,14 +1,12 @@
 {
   "functions": {
     "source": ".",
-    "predeploy": [
-      "npm --prefix \"$RESOURCE_DIR\" run check",
-      "npm --prefix \"$RESOURCE_DIR\" run public"
-    ]
+    "predeploy": ["npm run check"]
   },
   "hosting": {
     "public": "public",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "predeploy": ["npm run test", "npm run build:public"]
   },
   "emulators": {
     "functions": {
