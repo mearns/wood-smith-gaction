@@ -40,8 +40,8 @@ describe("The wood-screw scene", () => {
         await loadProjectSettings();
         testManager = new ActionsOnGoogleTestManager({ projectId: PROJECT_ID });
         await testManager.writePreviewFromDraft();
-        testManager.setSuiteLocale("en-US");
-        testManager.setSuiteSurface("PHONE");
+        testManager.setSuiteLocale(DEFAULT_LOCALE);
+        testManager.setSuiteSurface(DEFAULT_SURFACE);
     });
 
     afterEach(async () => {

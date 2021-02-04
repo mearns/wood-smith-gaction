@@ -1,4 +1,6 @@
-# Wood Smith 2 Google Actions Project
+# The Woodshop Helper
+
+---
 
 ## Development
 

@@ -3,10 +3,27 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "generate": "rimraf build/sdk && node dev-scripts/generate-yaml sdk build/sdk",
-    "publish:gactions": "cd build/sdk && gactions push",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "logs": "firebase functions:log",
+    "clean": "rimraf build/",
+    "pretty": "pretty-quick --staged",
+    "pretty-all": "prettier --write src/**/*.js test/**/*.js dev-scripts/**/*.js gactions/**/*.js gactions/**/*.json gactions/**/*.yaml gactions/**/*.yml ./*.js ./*.json ./*.yaml ./*.yml",
+    "check": "eslint --max-warnings 0 --no-error-on-unmatched-pattern --format codeframe src/ test/ gactions/ dev-scripts/ \"./*.js\"",
+    "unit-test": "jest --testPathPattern=test\\/unit\\/",
+    "actions-test": "jest --testPathPattern=test\\/actions\\/",
+    "test": "npm run unit-test",
+    "verify": "npm run check && npm run test",
+    "public": "npm-run-all \"public:*\"",
+    "build:gactions": "rimraf build/gactions && node dev-scripts/generate-yaml gactions build/gactions",
+    "publish:gactions": "cd build/gactions && gactions push",
     "deploy:firebase": "firebase deploy",
-    "firebase-emulate": "firebase emulate"
+    "pages": "npm-run-all \"pages:*\"",
+    "public:logo": "copyfiles logo.png public/",
+    "public:reports": "npm-run-all \"public:reports:*\"",
+    "public:reports:copy": "copyfiles \"reports/**/*\" public/",
+    "public:reports:copy-logo": "copyfiles logo.png public/reports/",
+    "public:reports:index": "mkdirp public && node ./dev-scripts/render.js dev-scripts/resources/reports/index.hbs > public/reports/index.html"
   },
   "repository": {
     "type": "git",
@@ -24,12 +41,16 @@
     "copyfiles": "^2.4.1",
     "eslint": "^7.19.0",
     "eslint-config-mearns": "git+https://github.com/mearns/eslint-config-mearns.git#v0.3.0",
+    "firebase-functions-test": "^0.2.3",
     "firebase-tools": "^9.2.0",
+    "handlebars": "^4.7.6",
     "husky": "^4.3.8",
     "jest": "^26.6.3",
     "jest-junit": "^12.0.0",
     "jest-stare": "^2.2.1",
     "js-yaml": "^4.0.0",
+    "markdown": "^0.5.0",
+    "marked": "^1.2.9",
     "mkdirp": "^1.0.4",
     "mustache": "^4.1.0",
     "node": "^14.15.2",
@@ -41,6 +62,8 @@
     "seedrandom": "^3.0.5"
   },
   "dependencies": {
-    "@woodsmith/firebase-functions": "file:functions"
+    "@assistant/conversation": "^3.3.0",
+    "firebase-admin": "^9.4.2",
+    "firebase-functions": "^3.13.1"
   }
 }

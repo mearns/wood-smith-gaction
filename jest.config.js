@@ -1,6 +1,8 @@
 module.exports = {
-    roots: ["test/"],
-    collectCoverageFrom: ["src/**/*.js", "test-utils/**/*.js"],
+    roots: ["test/", "src/"],
+    testEnvironment: "node",
+    collectCoverage: true,
+    collectCoverageFrom: ["src/**/*.js"],
     coverageDirectory: "reports/coverage/",
     coverageReporters: ["json", "lcov", "text", "clover", "cobertura"],
     reporters: [
