@@ -1,4 +1,4 @@
-const WOOD_SCREW_DATA = require("@woodsmith/firebase-functions/src/data/wood-screw-data");
+const WOOD_SCREW_DATA = require("../../../src/data/wood-screw-data");
 
 module.exports = {
     synonym: {
